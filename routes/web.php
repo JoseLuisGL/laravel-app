@@ -1,7 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
+//Rutas Controlador
+Route::get('users/', [UserController::class, 'index'])->name('users.index');
+Route::get('users/create', [UserController::class, 'create'])->name('users.create');
+Route::get('users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('users/{name}', [UserController::class, 'edit'])->name('users.edit');
+
 
 //Vista
 Route::get('/visitante', function () {
